@@ -23,7 +23,7 @@ bundle install
 The site uses Jekylls collection feature to order pages. Refer to the documentation [here](http://jekyllrb.com/docs/collections/).
 
 
-### Testing
+## Testing
 
 Test that your rendered documentation files are up to scratch with [HTML::Proofer](https://github.com/gjtorikian/html-proofer).
 

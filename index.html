@@ -4,16 +4,18 @@ layout: default
 
 <div class="home">
 
-  <h1 class="page-heading">Posts</h1>
-
   <ul class="post-list">
       {% for collection in site.collections %}
-          <li><a class="page-link" href="{{ collection.relative_directory | replace: '_', '' | prepend: site.baseurl  }}/">{{ collection.title }}</a></li>
-          <ul>
-          {% for doc in collection.docs %}
-            <li><a class="page-link" href="{{ doc.url | prepend: site.baseurl }}">{{ doc.title }}</a></li>
-          {% endfor %}
-          </ul>
+        {% if collection.docs.size > 0 %}
+          <li>
+              <a class="page-link" href="{{ collection.label | prepend: site.baseurl  }}/">{{ collection.title }}</a>
+              <ul>
+              {% for doc in collection.docs %}
+                <li><a class="page-link" href="{{ doc.url | prepend: site.baseurl }}">{{ doc.title }}</a></li>
+              {% endfor %}
+              </ul>
+          </li>
+        {% endif %}
       {% endfor %}
   </ul>
 

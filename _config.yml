@@ -1,16 +1,18 @@
 # Site settings
-title: No Divide Docs
+title: Documentation
 email: matt@nodividestudio.com
 description: > #
   Documentation for No Divide Studio
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 
+# Excluse the vendor folder
 exclude: [vendor]
 
 # Build settings
 markdown: kramdown
 
+# Documentation Sections
 collections:
   boilerplate-docs:
     title: Boilerplate Docs

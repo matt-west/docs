@@ -26,7 +26,3 @@ The site uses Jekylls collection feature to order pages. Refer to the documentat
 ## Testing
 
 Test that your rendered documentation files are up to scratch with [HTML::Proofer](https://github.com/gjtorikian/html-proofer).
-
-```
-rake test
-```

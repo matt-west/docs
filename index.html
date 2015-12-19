@@ -7,7 +7,7 @@ layout: default
     <h1 class="page__title">{{ site.title }}</h1>
 
     <p class="page__intro">
-        Intro
+        Welcome to our documentation. You can changes this text by editing <code>index.html</code>.
     </p>
 
     <ul class="collections">
@@ -16,7 +16,7 @@ layout: default
             <li class="collections__item">
                 <a href="{{ collection.permalink | replace: ':path', 'index' | prepend: site.baseUrl }}">
                     <div class="collections__title">{{ collection.title }}</div>
-                    <div class="collections__meta">{{ collection.docs.size }} Sections</div>
+                    <div class="collections__meta">{{ collection.docs.size }} sections</div>
                 </a>
             </li>
           {% endif %}

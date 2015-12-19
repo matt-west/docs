@@ -71,11 +71,11 @@
 
         &--current {
             > a {
-                background-color: $c-brand-primary;
+                background-color: $c-brand;
 
                 &:hover,
                 &:focus {
-                    background-color: $c-brand-primary;
+                    background-color: $c-brand;
                 }
             }
         }

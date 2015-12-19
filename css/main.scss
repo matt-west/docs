@@ -15,19 +15,24 @@ $heavy-font-weight:    800;
 $small-font-size:      $base-font-size * 0.875;
 $base-line-height:     1.85;
 
-$spacing-unit:     30px;
+$spacing-unit:         30px;
+
+$g-border-radius:      3px;
 
 // Colors
+$c-brand:                #08C;
+$c-brand--light:         lighten($c-brand, 50%);
+$c-brand--lighter:       #EFFDFF;
+
 $c-text:                 #000;
-$c-anchor:               #08C;
+$c-anchor:               $c-brand;
 $c-anchor--hover:        darken($c-anchor, 10%);
 
 $c-bg:                   #FFF;
 
-$c-logo:                 #FFF;
+$c-code:                 $c-brand--lighter;
 
-$c-brand-primary:        #08C;
-$c-brand-secondary:      #0068CC;
+$c-logo:                 #FFF;
 
 $c-sidebar-bg:           #2B3034;
 $c-sidebar-text:         #9AB0C2;

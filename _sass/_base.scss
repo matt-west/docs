@@ -15,14 +15,15 @@ dl, dd, ol, ul, figure {
  */
 body {
     font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
-    color: $text-color;
-    background-color: $background-color;
+    color: $c-text;
+    background-color: $c-bg;
     -webkit-text-size-adjust: 100%;
     -webkit-font-feature-settings: "kern" 1;
     -moz-font-feature-settings: "kern" 1;
     -o-font-feature-settings: "kern" 1;
     font-feature-settings: "kern" 1;
     font-kerning: normal;
+    -webkit-font-smoothing: antialiased;
 }
 
 
@@ -76,6 +77,10 @@ li {
     }
 }
 
+ol ol {
+    list-style: lower-roman;
+}
+
 
 
 /**
@@ -85,21 +90,47 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: $base-font-weight;
 }
 
+h2 {
+    font-size: 1.7em;
+    letter-spacing: -0.03em;
+    margin: $spacing-unit * 1.5 -80px $spacing-unit;
+    padding: 0 80px 5px;
+    color: $c-brand;
+    border-bottom: 1px solid $c-brand--light;
+}
+
+h3, h4, h5, h6 {
+    font-weight: $semibold-font-weight;
+    color: $c-brand;
+}
+
+h3 {
+    font-size: 1.4em;
+}
+
+h4 {
+    font-size: 1.2em;
+}
+
+h5, h6 {
+    font-weight: $bold-font-weight;
+    font-size: 1em;
+}
 
 
 /**
  * Links
  */
 a {
-    color: $brand-color;
+    color: $c-anchor;
     text-decoration: none;
 
     &:visited {
-        color: darken($brand-color, 15%);
+        color: $c-anchor;
     }
 
     &:hover {
-        color: $text-color;
+        color: $c-anchor--hover;
         text-decoration: underline;
     }
 }
@@ -110,11 +141,12 @@ a {
  * Blockquotes
  */
 blockquote {
-    color: $grey-color;
-    border-left: 4px solid $grey-color-light;
+    color: $c-grey;
+    border-left: 4px solid $c-grey-light;
     padding-left: $spacing-unit / 2;
-    font-size: 18px;
-    letter-spacing: -1px;
+    font-size: 1.2em;
+    line-height: 1.7;
+    letter-spacing: -0.03em;
     font-style: italic;
 
     > :last-child {
@@ -130,9 +162,9 @@ blockquote {
 pre,
 code {
     font-size: 15px;
-    border: 1px solid $grey-color-light;
-    border-radius: 3px;
-    background-color: #eef;
+    border: 1px solid $c-brand--light;
+    border-radius: 0 4px 4px 0;
+    background-color: $c-code;
 }
 
 code {
@@ -153,23 +185,78 @@ pre {
 
 
 /**
- * Wrapper
+ * Horizontal Rule
  */
-.wrapper {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: $spacing-unit;
-    padding-left: $spacing-unit;
-    @extend %clearfix;
+hr {
+    border: 0;
+    border-top: 1px solid $c-brand--light;
+    margin: $spacing-unit * 2 -80px;
+}
 
-    @include media-query($on-laptop) {
-        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
-        padding-right: $spacing-unit / 2;
-        padding-left: $spacing-unit / 2;
+
+
+/**
+ * Tables
+ */
+table {
+    width: 100%;
+    padding: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: $spacing-unit 0;
+
+    th, td {
+        border-left: 1px solid $c-brand--light;
+        border-top: 1px solid $c-brand--light;
+        padding: 7px 15px;
     }
+
+    th {
+        text-align: left;
+        font-weight: $bold-font-weight;
+    }
+
+    thead {
+        th, td {
+            background-color: $c-brand--lighter;
+            color: $c-brand;
+        }
+
+        tr {
+            th:first-child {
+                border-top-left-radius: $g-border-radius;
+            }
+
+            th:last-child {
+                border-top-right-radius: $g-border-radius;
+                border-right: 1px solid $c-brand--light;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            td:last-child {
+                border-right: 1px solid $c-brand--light;
+            }
+        }
+
+        tr:last-child {
+            td, th {
+                border-bottom: 1px solid $c-brand--light;
+            }
+
+            td:first-child {
+                border-bottom-left-radius: $g-border-radius;
+            }
+
+            td:last-child {
+                border-bottom-right-radius: $g-border-radius;
+            }
+        }
+    }
+
+
 }
 
 
@@ -183,24 +270,5 @@ pre {
         content: "";
         display: table;
         clear: both;
-    }
-}
-
-
-
-/**
- * Icons
- */
-.icon {
-
-    > svg {
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        vertical-align: middle;
-
-        path {
-            fill: $grey-color;
-        }
     }
 }

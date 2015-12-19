@@ -6,21 +6,46 @@
 
 
 // Our variables
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
-$base-font-weight: 400;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
+$base-font-family:     "Open Sans", sans-serif;
+$base-font-size:       14px;
+$base-font-weight:     400;
+$semibold-font-weight: 600;
+$bold-font-weight:     700;
+$heavy-font-weight:    800;
+$small-font-size:      $base-font-size * 0.875;
+$base-line-height:     1.85;
 
-$spacing-unit:     30px;
+$spacing-unit:         30px;
 
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
+$g-border-radius:      3px;
 
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
+// Colors
+$c-brand:                #08C;
+$c-brand--light:         lighten($c-brand, 50%);
+$c-brand--lighter:       #EFFDFF;
+
+$c-text:                 #000;
+$c-anchor:               $c-brand;
+$c-anchor--hover:        darken($c-anchor, 10%);
+
+$c-bg:                   #FFF;
+
+$c-code:                 $c-brand--lighter;
+
+$c-logo:                 #FFF;
+
+$c-sidebar-bg:           #2B3034;
+$c-sidebar-text:         #9AB0C2;
+
+$c-footer-text:          #9AB0C2;
+
+$c-nav-text:             #FFF;
+$c-nav-anchor:           $c-nav-text;
+$c-nav-anchor-bg:        #424A50;
+
+$c-grey:                 #888;
+$c-grey-light:           #DDD;
+
 
 // Width of the content area
 $content-width:    800px;

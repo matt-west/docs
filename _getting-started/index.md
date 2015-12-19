@@ -24,4 +24,4 @@ bundle install
 jekyll serve
 ```
 
-You can now view your site at: [http://127.0.0.1:4000/](http://127.0.0.1:4000/)
+You can now view your site at: [http://localhost:4000/](http://localhost:4000/)

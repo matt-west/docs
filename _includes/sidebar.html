@@ -1,0 +1,34 @@
+<div class="sidebar">
+
+    <header class="site-header">
+        <a href="{{ site.baseurl }}/">{{ site.title }}</a>
+    </header>
+
+    <nav class="nav">
+        <ul class="nav__items">
+            {% for collection in site.collections %}
+              {% if collection.docs.size > 0 %}
+                {% assign collection_url = collection.permalink | replace: ':path', 'index' %}
+                <li class="nav__item {% if page.collection == collection.label %}nav__item--open{% endif %}  {% if page.url == collection_url %}nav__item--current{% endif %}">
+                    <a href="{{ collection.permalink | replace: ':path', 'index' | prepend: site.baseUrl }}">{{ collection.title }}</a>
+                    <ul class="nav__sub-items">
+                    {% for doc in collection.docs %}
+                      {% if doc.url != collection_url %}
+                        <li class="nav__item  {% if page.url == doc.url %}nav__item--current{% endif %}"><a href="{{ doc.url | prepend: site.baseurl }}">{{ doc.title }}</a></li>
+                      {% endif %}
+                    {% endfor %}
+                    </ul>
+                </li>
+              {% endif %}
+            {% endfor %}
+        </ul>
+    </nav>
+
+    <footer class="site-footer">
+        <p>
+            These site is powered by <a href="https://github.com/matt-west/docs" target="_blank">Docs</a>. An open source documentation boilerplate by <a href="https://twitter.com/MattAntWest" target="_blank">Matt West</a>.
+        </p>
+    </footer>
+
+
+</div>

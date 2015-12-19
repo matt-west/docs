@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Test Page
+title: Style Guide
 ---
 
 This is just a quick test page!

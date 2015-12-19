@@ -2,21 +2,25 @@
 layout: default
 ---
 
-<div class="home">
+<div class="page">
 
-  <ul class="post-list">
-      {% for collection in site.collections %}
-        {% if collection.docs.size > 0 %}
-          <li>
-              <a class="page-link" href="{{ collection.label | prepend: site.baseurl  }}/">{{ collection.title }}</a>
-              <ul>
-              {% for doc in collection.docs %}
-                <li><a class="page-link" href="{{ doc.url | prepend: site.baseurl }}">{{ doc.title }}</a></li>
-              {% endfor %}
-              </ul>
-          </li>
-        {% endif %}
-      {% endfor %}
-  </ul>
+    <h1 class="page__title">{{ site.title }}</h1>
+
+    <p class="page__intro">
+        Intro
+    </p>
+
+    <ul class="collections">
+        {% for collection in site.collections %}
+          {% if collection.docs.size > 0 %}
+            <li class="collections__item">
+                <a href="{{ collection.permalink | replace: ':path', 'index' | prepend: site.baseUrl }}">
+                    <div class="collections__title">{{ collection.title }}</div>
+                    <div class="collections__meta">{{ collection.docs.size }} Sections</div>
+                </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+    </ul>
 
 </div>
